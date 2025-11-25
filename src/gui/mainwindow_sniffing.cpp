@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QStatusBar>
+#include <QTimeZone>
 #include <pcap.h>
 
 void MainWindow::startSniffing() {
@@ -109,6 +110,13 @@ void MainWindow::handlePacket(const QByteArray &raw,
     }
     // == TIME ==
     QDateTime pktTime = QDateTime::currentDateTime();
+    bool timestampOk = false;
+    if (!infos.isEmpty()) {
+        const qint64 seconds = infos[0].toLongLong(&timestampOk);
+        if (timestampOk) {
+            pktTime = QDateTime::fromSecsSinceEpoch(seconds, QTimeZone::UTC);
+        }
+    }
     qint64 elapsedMs = sessionStartTime.msecsTo(pktTime);
     double elapsedSec = elapsedMs / 1000.0;
     QString time = QString::number(elapsedSec, 'f', 3);

@@ -14,8 +14,10 @@
 #include <QCoreApplication>
 #include <QDesktopServices>
 #include <QList>
+#include <QVector>
 #include <QToolButton>
 #include <QUrl>
+#include <QDateTime>
 
 void MainWindow::setupUI() {
     // === Central UI ===
@@ -242,13 +244,28 @@ void MainWindow::setupUI() {
     actionOpen = fileMenu->addAction("Open...", this, [this]() {
         QString fileName = QFileDialog::getOpenFileName(this, "Open PCAP", "", "PCAP Files (*.pcap)");
         if (!fileName.isEmpty()) {
+            if (stopBtn && stopBtn->isEnabled()) {
+                stopSniffing();
+            }
+            if (sessionTimer) {
+                sessionTimer->stop();
+            }
+
+            startNewSession();
+            protocolCounts.clear();
+
             parser.openFromPcap(fileName);
 
-            for (const CapturedPacket &packet : parser.getAllPackets()) {
-                QStringList infos;
-                infos << QString::number(0) << QString::number(packet.data.size());
-                handlePacket(packet.data, infos, packet.linkType);
+            QVector<CapturedPacket> packets = parser.getAllPackets();
+            parser.clearBuffer();
+
+            if (packets.isEmpty()) {
+                refreshAnomalyInspector();
+                return;
             }
+
+            const QDateTime startTimestamp = packetTimestampFor(packets.first(), QDateTime::currentDateTime());
+            replayCapturedPackets(packets, startTimestamp);
         }
     });
 

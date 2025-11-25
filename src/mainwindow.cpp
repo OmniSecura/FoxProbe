@@ -16,6 +16,8 @@
 #include <QToolButton>
 #include <QItemSelectionModel>
 #include <QItemSelection>
+#include <QTime>
+#include <QTimeZone>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -163,32 +165,50 @@ bool MainWindow::loadOfflineSession(const SessionStorage::LoadedSession &session
     startNewSession();
     protocolCounts.clear();
 
-    qint64 duration = 0;
-    if (session.record.startTime.isValid() && session.record.endTime.isValid()) {
-        duration = session.record.startTime.secsTo(session.record.endTime);
-        if (duration < 0) {
-            duration = 0;
-        }
-    }
-    sessionStartTime = QDateTime::currentDateTime().addSecs(-duration);
-    updateSessionTime();
-
     parser.clearBuffer();
 
     const QDateTime statsStart = session.record.startTime.isValid()
         ? session.record.startTime
         : QDateTime::currentDateTime();
-    initializeStatistics(statsStart);
+    replayCapturedPackets(session.packets, statsStart);
 
-    QDateTime packetTimestamp = statsStart;
+    return true;
+}
 
-    for (const CapturedPacket &packet : session.packets) {
-        Sniffing::appendPacket(packet);
+QDateTime MainWindow::packetTimestampFor(const CapturedPacket &packet,
+                                         const QDateTime &fallback) const
+{
+    if (packet.timestampSec > 0) {
+        const qint64 msecs = packet.timestampSec * 1000
+                           + static_cast<qint64>(packet.timestampUsec / 1000);
+        return QDateTime::fromMSecsSinceEpoch(msecs, QTimeZone::UTC);
+    }
+    return fallback;
+}
+
+void MainWindow::replayCapturedPackets(const QVector<CapturedPacket> &packets,
+                                       const QDateTime &sessionStart)
+{
+    sessionStartTime = sessionStart;
+    updateSessionTime();
+    initializeStatistics(sessionStartTime);
+
+    QDateTime packetTimestamp = sessionStartTime;
+    for (const CapturedPacket &packet : packets) {
+        packetTimestamp = packetTimestampFor(packet, packetTimestamp);
+        const qint64 tsSec = packet.timestampSec > 0
+            ? packet.timestampSec
+            : packetTimestamp.toSecsSinceEpoch();
+        const qint64 tsUsec = packet.timestampSec > 0
+            ? packet.timestampUsec
+            : static_cast<qint64>(packetTimestamp.time().msec()) * 1000;
+
+        Sniffing::appendPacket(CapturedPacket{packet.data, packet.linkType, tsSec, tsUsec});
+        Sniffing::recordStreamSegment(packet.data, packet.linkType, tsSec, tsUsec);
         QStringList infos;
-        infos << QString::number(packetTimestamp.toSecsSinceEpoch())
+        infos << QString::number(tsSec)
               << QString::number(packet.data.size());
         handlePacket(packet.data, infos, packet.linkType);
-        packetTimestamp = packetTimestamp.addMSecs(1);
     }
 
     if (stats) {
@@ -196,7 +216,15 @@ bool MainWindow::loadOfflineSession(const SessionStorage::LoadedSession &session
     }
     refreshAnomalyInspector();
 
-    return true;
+    if (sessionTimer) {
+        sessionTimer->stop();
+    }
+    if (sessionTimeLabel && !packets.isEmpty()) {
+        const qint64 secs = sessionStartTime.secsTo(packetTimestamp);
+        QTime t(0, 0);
+        sessionTimeLabel->setText(
+            QStringLiteral("Time: %1").arg(t.addSecs(secs).toString(QStringLiteral("HH:mm:ss"))));
+    }
 }
 
 void MainWindow::resetLayoutToDefault()

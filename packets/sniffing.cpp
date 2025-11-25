@@ -318,7 +318,10 @@ void Sniffing::packet_callback(u_char *args,
     QByteArray raw(reinterpret_cast<const char*>(packet),
                    header->caplen);
 
-    CapturedPacket captured{raw, worker ? worker->linkType() : DLT_EN10MB};
+    CapturedPacket captured{raw,
+                            worker ? worker->linkType() : DLT_EN10MB,
+                            header->ts.tv_sec,
+                            header->ts.tv_usec};
     Sniffing::appendPacket(captured);
     Sniffing::recordStreamSegment(raw,
                                   captured.linkType,
@@ -2825,7 +2828,7 @@ void Sniffing::openFromPcap(const QString &filePath) {
         int res = pcap_next_ex(handle, &header, &raw);
         if (res == 1) {
             QByteArray pkt(reinterpret_cast<const char*>(raw), header->caplen);
-            appendPacket(CapturedPacket{pkt, linkType});
+            appendPacket(CapturedPacket{pkt, linkType, header->ts.tv_sec, header->ts.tv_usec});
             recordStreamSegment(pkt, linkType, header->ts.tv_sec, header->ts.tv_usec);
         }
         else if (res == -2) {

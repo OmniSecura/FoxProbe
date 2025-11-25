@@ -1,0 +1,25 @@
+{
+    "perSecond": [
+        {
+            "avgPacketSize": 71.76923076923077,
+            "bps": 933,
+            "connections": [
+                {
+                    "dst": "172.20.10.2",
+                    "src": "151.101.65.229"
+                },
+                {
+                    "dst": "151.101.65.229",
+                    "src": "172.20.10.2"
+                }
+            ],
+            "pps": 13,
+            "protocolCounts": {
+                "TCP": 13
+            },
+            "second": 4
+        }
+    ],
+    "sessionEnd": "2025-11-21T11:39:33",
+    "sessionStart": "2025-11-21T11:39:29"
+}

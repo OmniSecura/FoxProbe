@@ -128,6 +128,10 @@ private:
     void loadPreferences();
     void persistCurrentSession();
     bool loadOfflineSession(const SessionStorage::LoadedSession &session);
+    void replayCapturedPackets(const QVector<CapturedPacket> &packets,
+                               const QDateTime &sessionStart);
+    QDateTime packetTimestampFor(const CapturedPacket &packet,
+                                 const QDateTime &fallback) const;
     void initializeStatistics(const QDateTime &sessionStart);
     void refreshAnomalyInspector();
 

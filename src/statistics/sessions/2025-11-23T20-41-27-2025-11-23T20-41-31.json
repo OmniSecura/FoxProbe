@@ -1,0 +1,112 @@
+{
+    "perSecond": [
+        {
+            "avgPacketSize": 163.63636363636363,
+            "bps": 1800,
+            "connections": [
+                {
+                    "dst": "192.168.55.8",
+                    "src": "162.159.128.233"
+                },
+                {
+                    "dst": "-",
+                    "src": "-"
+                },
+                {
+                    "dst": "162.159.128.233",
+                    "src": "192.168.55.8"
+                },
+                {
+                    "dst": "224.0.0.251",
+                    "src": "192.168.55.4"
+                },
+                {
+                    "dst": "ff02::fb",
+                    "src": "fe80::5f5f:9354:43c6:623f"
+                },
+                {
+                    "dst": "ff02::fb",
+                    "src": "fe80::1071:e7ca:49bf:6fcc"
+                },
+                {
+                    "dst": "224.0.0.251",
+                    "src": "192.168.55.6"
+                }
+            ],
+            "pps": 11,
+            "protocolCounts": {
+                "OTHER": 4,
+                "UDP": 7
+            },
+            "second": 1
+        },
+        {
+            "avgPacketSize": 230.5625,
+            "bps": 3689,
+            "connections": [
+                {
+                    "dst": "224.0.0.251",
+                    "src": "192.168.55.4"
+                },
+                {
+                    "dst": "ff02::fb",
+                    "src": "fe80::5f5f:9354:43c6:623f"
+                },
+                {
+                    "dst": "ff02::fb",
+                    "src": "fe80::1071:e7ca:49bf:6fcc"
+                },
+                {
+                    "dst": "224.0.0.251",
+                    "src": "192.168.55.6"
+                }
+            ],
+            "pps": 16,
+            "protocolCounts": {
+                "UDP": 16
+            },
+            "second": 2
+        },
+        {
+            "avgPacketSize": 83.5,
+            "bps": 501,
+            "connections": [
+                {
+                    "dst": "162.159.136.234",
+                    "src": "192.168.55.8"
+                },
+                {
+                    "dst": "192.168.55.8",
+                    "src": "162.159.136.234"
+                },
+                {
+                    "dst": "-",
+                    "src": "-"
+                }
+            ],
+            "pps": 6,
+            "protocolCounts": {
+                "OTHER": 2,
+                "TCP": 4
+            },
+            "second": 3
+        },
+        {
+            "avgPacketSize": 60,
+            "bps": 60,
+            "connections": [
+                {
+                    "dst": "-",
+                    "src": "-"
+                }
+            ],
+            "pps": 1,
+            "protocolCounts": {
+                "OTHER": 1
+            },
+            "second": 4
+        }
+    ],
+    "sessionEnd": "2025-11-23T20:41:31",
+    "sessionStart": "2025-11-23T20:41:27"
+}

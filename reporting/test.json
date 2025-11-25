@@ -1,0 +1,59 @@
+{
+    "createdAt": "2025-11-21T11:40:13",
+    "description": "test",
+    "packets": [
+        {
+            "color": "#ffc061cb",
+            "destination": "172.20.10.2",
+            "info": "871648001  699637559  32  FIN|ACK  279  47265  0",
+            "number": "8",
+            "protocol": "TCP",
+            "row": 7,
+            "source": "151.101.65.229",
+            "tags": [
+                "debil"
+            ],
+            "time": "4.103"
+        },
+        {
+            "color": "#ffc061cb",
+            "destination": "172.20.10.2",
+            "info": "871647977  699637559  32  PSH|ACK  279  55445  0",
+            "number": "6",
+            "protocol": "TCP",
+            "row": 5,
+            "source": "151.101.65.229",
+            "tags": [
+                "ddos"
+            ],
+            "time": "4.101"
+        },
+        {
+            "destination": "172.20.10.2",
+            "info": "871647977  699637559  32  ACK  279  47290  0",
+            "number": "5",
+            "protocol": "TCP",
+            "row": 4,
+            "source": "151.101.65.229",
+            "tags": [
+            ],
+            "time": "4.100"
+        },
+        {
+            "destination": "151.101.65.229",
+            "info": "699637534  871647977  32  FIN|PSH|ACK  249  36767  0",
+            "number": "2",
+            "protocol": "TCP",
+            "row": 1,
+            "source": "172.20.10.2",
+            "tags": [
+            ],
+            "time": "4.097"
+        }
+    ],
+    "recommendedAction": "No immediate action",
+    "tags": [
+    ],
+    "threatLevel": "Informational",
+    "title": "test"
+}

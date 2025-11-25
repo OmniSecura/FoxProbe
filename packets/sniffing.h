@@ -96,6 +96,8 @@ struct ParsedTls {
 struct CapturedPacket {
     QByteArray data;
     int linkType = DLT_EN10MB;
+    qint64 timestampSec = 0;
+    qint64 timestampUsec = 0;
 };
 
 class PacketWorker;

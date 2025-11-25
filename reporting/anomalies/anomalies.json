@@ -1,0 +1,1051 @@
+{
+    "anomalies": [
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "5940836426511674415",
+            "reasons": [
+                "Packet rate spike (9.96σ)",
+                "Byte throughput surge (3.92σ)",
+                "New protocol(s): HOPOPTS, ICMP, IGMP",
+                "Traffic dominated by UDP 87.3%"
+            ],
+            "score": 9.959280371240412,
+            "second": 58,
+            "summary": "Anomaly at 58s: Packet rate spike (9.96σ); Byte throughput surge (3.92σ); New protocol(s): HOPOPTS, ICMP, IGMP; Traffic dominated by UDP 87.3%",
+            "tags": [
+                "packet-rate",
+                "byte-throughput",
+                "new-protocol",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "17149992811717658503",
+            "reasons": [
+                "Packet rate spike (8.05σ)",
+                "Byte throughput surge (5.66σ)",
+                "Protocol mix shift (3.27σ)",
+                "New protocol(s): UDP",
+                "Traffic dominated by UDP 84.2%"
+            ],
+            "score": 8.045759514392032,
+            "second": 55,
+            "summary": "Anomaly at 55s: Packet rate spike (8.05σ); Byte throughput surge (5.66σ); Protocol mix shift (3.27σ); New protocol(s): UDP; Traffic dominated by UDP 84.2%",
+            "tags": [
+                "packet-rate",
+                "byte-throughput",
+                "protocol-entropy",
+                "new-protocol",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "18158700920240546240",
+            "reasons": [
+                "Protocol mix shift (6.41σ)"
+            ],
+            "score": 6.406881239484636,
+            "second": 42,
+            "summary": "Anomaly at 42s: Protocol mix shift (6.41σ)",
+            "tags": [
+                "protocol-entropy"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16945438784030786561",
+            "reasons": [
+                "Byte throughput surge (5.02σ)",
+                "Traffic dominated by TCP 88.2%"
+            ],
+            "score": 5.01914856659981,
+            "second": 70,
+            "summary": "Anomaly at 70s: Byte throughput surge (5.02σ); Traffic dominated by TCP 88.2%",
+            "tags": [
+                "byte-throughput",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "9258645477965754001",
+            "reasons": [
+                "Connection fan-out (2.86σ)",
+                "Protocol mix shift (4.83σ)",
+                "New protocol(s): OTHER",
+                "Traffic dominated by TCP 66.7%"
+            ],
+            "score": 4.828820481805637,
+            "second": 26,
+            "summary": "Anomaly at 26s: Connection fan-out (2.86σ); Protocol mix shift (4.83σ); New protocol(s): OTHER; Traffic dominated by TCP 66.7%",
+            "tags": [
+                "connection-fanout",
+                "protocol-entropy",
+                "new-protocol",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "14294565969065021297",
+            "reasons": [
+                "Packet size swing (4.64σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 4.635855793852464,
+            "second": 19,
+            "summary": "Anomaly at 19s: Packet size swing (4.64σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "packet-size",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "17099332393781012666",
+            "reasons": [
+                "Connection fan-out (4.55σ)"
+            ],
+            "score": 4.5540138053446455,
+            "second": 69,
+            "summary": "Anomaly at 69s: Connection fan-out (4.55σ)",
+            "tags": [
+                "connection-fanout"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "2867781188101299396",
+            "reasons": [
+                "Packet size swing (3.72σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3.7160527016867246,
+            "second": 16,
+            "summary": "Anomaly at 16s: Packet size swing (3.72σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "packet-size",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "10418882236269874452",
+            "reasons": [
+                "Packet size swing (3.67σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3.669839567322812,
+            "second": 50,
+            "summary": "Anomaly at 50s: Packet size swing (3.67σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "packet-size",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "9433048797396796475",
+            "reasons": [
+                "Packet rate spike (3.45σ)",
+                "Connection fan-out (3.07σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3.453783473980083,
+            "second": 41,
+            "summary": "Anomaly at 41s: Packet rate spike (3.45σ); Connection fan-out (3.07σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "packet-rate",
+                "connection-fanout",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "17511960717317528375",
+            "reasons": [
+                "New protocol(s): TCP",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3.1999999999999997,
+            "second": 7,
+            "summary": "Anomaly at 7s: New protocol(s): TCP; Traffic dominated by TCP 100.0%",
+            "tags": [
+                "new-protocol",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4560343174439542033",
+            "reasons": [
+                "New protocol(s): UDP",
+                "Traffic dominated by TCP 81.8%"
+            ],
+            "score": 3.1999999999999997,
+            "second": 11,
+            "summary": "Anomaly at 11s: New protocol(s): UDP; Traffic dominated by TCP 81.8%",
+            "tags": [
+                "new-protocol",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4424584828751609074",
+            "reasons": [
+                "New protocol(s): ARP"
+            ],
+            "score": 3.1999999999999997,
+            "second": 12,
+            "summary": "Anomaly at 12s: New protocol(s): ARP",
+            "tags": [
+                "new-protocol"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16315916071922232263",
+            "reasons": [
+                "New protocol(s): OTHER"
+            ],
+            "score": 3.1999999999999997,
+            "second": 81,
+            "summary": "Anomaly at 81s: New protocol(s): OTHER",
+            "tags": [
+                "new-protocol"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "3218814455316200256",
+            "reasons": [
+                "Connection fan-out (3.06σ)",
+                "Burst of new connections (3.19σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3.1908527020138555,
+            "second": 31,
+            "summary": "Anomaly at 31s: Connection fan-out (3.06σ); Burst of new connections (3.19σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "connection-fanout",
+                "new-connections",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "97658318560061349",
+            "reasons": [
+                "Protocol mix shift (3.10σ)",
+                "Traffic dominated by UDP 71.4%"
+            ],
+            "score": 3.098632560951721,
+            "second": 56,
+            "summary": "Anomaly at 56s: Protocol mix shift (3.10σ); Traffic dominated by UDP 71.4%",
+            "tags": [
+                "protocol-entropy",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "1918647554028447325",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 8,
+            "summary": "Anomaly at 8s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "10182958460390013806",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 9,
+            "summary": "Anomaly at 9s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4767566077254728705",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 13,
+            "summary": "Anomaly at 13s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "9743189209564101875",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 14,
+            "summary": "Anomaly at 14s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "9817312777328195486",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 15,
+            "summary": "Anomaly at 15s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12383768359379618669",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 17,
+            "summary": "Anomaly at 17s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "18427081581560692349",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 18,
+            "summary": "Anomaly at 18s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "2821145154534943669",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 20,
+            "summary": "Anomaly at 20s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "10884264888272223311",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 21,
+            "summary": "Anomaly at 21s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16713983235244308208",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 22,
+            "summary": "Anomaly at 22s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16280230049668492774",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 23,
+            "summary": "Anomaly at 23s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "13280756386102621923",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 24,
+            "summary": "Anomaly at 24s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "17925099540216771924",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 25,
+            "summary": "Anomaly at 25s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "18865692637291011",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 27,
+            "summary": "Anomaly at 27s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "10539627419150506716",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 28,
+            "summary": "Anomaly at 28s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "14302699527515556206",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 29,
+            "summary": "Anomaly at 29s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "6157690320205443224",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 30,
+            "summary": "Anomaly at 30s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "9224743478168649337",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 32,
+            "summary": "Anomaly at 32s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4360683337888559387",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 33,
+            "summary": "Anomaly at 33s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "1421002202366653620",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 34,
+            "summary": "Anomaly at 34s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16609155873631742563",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 35,
+            "summary": "Anomaly at 35s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "5400999724117528867",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 36,
+            "summary": "Anomaly at 36s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16528074391182295495",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 37,
+            "summary": "Anomaly at 37s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4538711023412049190",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 38,
+            "summary": "Anomaly at 38s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "1539357798114118158",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 39,
+            "summary": "Anomaly at 39s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "6310062504008621042",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 40,
+            "summary": "Anomaly at 40s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "987107645131015397",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 43,
+            "summary": "Anomaly at 43s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "14684587311674042944",
+            "reasons": [
+                "Packet size swing (2.81σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 44,
+            "summary": "Anomaly at 44s: Packet size swing (2.81σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "packet-size",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12824110591601921750",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 45,
+            "summary": "Anomaly at 45s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "958890192191454873",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 46,
+            "summary": "Anomaly at 46s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "3277475877586943402",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 47,
+            "summary": "Anomaly at 47s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "11037676920419727521",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 48,
+            "summary": "Anomaly at 48s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "8316233089294626298",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 49,
+            "summary": "Anomaly at 49s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "18199403230384498171",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 51,
+            "summary": "Anomaly at 51s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "6352516155227124484",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 52,
+            "summary": "Anomaly at 52s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4077154492976817752",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 53,
+            "summary": "Anomaly at 53s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12991591299937476399",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 54,
+            "summary": "Anomaly at 54s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "5006302603028174421",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 57,
+            "summary": "Anomaly at 57s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "523620045116445640",
+            "reasons": [
+                "Traffic dominated by TCP 66.7%"
+            ],
+            "score": 3,
+            "second": 59,
+            "summary": "Anomaly at 59s: Traffic dominated by TCP 66.7%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12183091068970747150",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 60,
+            "summary": "Anomaly at 60s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "14357470711798438992",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 61,
+            "summary": "Anomaly at 61s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "11859841259373951848",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 62,
+            "summary": "Anomaly at 62s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "2443064890846875555",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 63,
+            "summary": "Anomaly at 63s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "1068990508484236960",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 64,
+            "summary": "Anomaly at 64s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "11155922192872784251",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 65,
+            "summary": "Anomaly at 65s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "16242930217966891450",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 66,
+            "summary": "Anomaly at 66s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "6689108280841102869",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 67,
+            "summary": "Anomaly at 67s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "6426411587153482297",
+            "reasons": [
+                "Traffic dominated by UDP 66.7%"
+            ],
+            "score": 3,
+            "second": 68,
+            "summary": "Anomaly at 68s: Traffic dominated by UDP 66.7%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12775803907917011840",
+            "reasons": [
+                "Traffic dominated by TCP 66.7%"
+            ],
+            "score": 3,
+            "second": 72,
+            "summary": "Anomaly at 72s: Traffic dominated by TCP 66.7%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "13427582951356597460",
+            "reasons": [
+                "Traffic dominated by TCP 66.7%"
+            ],
+            "score": 3,
+            "second": 73,
+            "summary": "Anomaly at 73s: Traffic dominated by TCP 66.7%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "7942910552555116494",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 74,
+            "summary": "Anomaly at 74s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "5770616020482988011",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 75,
+            "summary": "Anomaly at 75s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "8245615549420722439",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 76,
+            "summary": "Anomaly at 76s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "10580950869096111547",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 77,
+            "summary": "Anomaly at 77s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "11175664700765970089",
+            "reasons": [
+                "Connection fan-out (2.80σ)",
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 78,
+            "summary": "Anomaly at 78s: Connection fan-out (2.80σ); Traffic dominated by TCP 100.0%",
+            "tags": [
+                "connection-fanout",
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "5533761415010471338",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 79,
+            "summary": "Anomaly at 79s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12663314699716618206",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 80,
+            "summary": "Anomaly at 80s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "18113163118431440720",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 82,
+            "summary": "Anomaly at 82s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "17907276023570178315",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 83,
+            "summary": "Anomaly at 83s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "12192104903513555095",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 84,
+            "summary": "Anomaly at 84s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        },
+        {
+            "capturedAt": "2025-11-25T11:04:55Z",
+            "id": "4133506065933761136",
+            "reasons": [
+                "Traffic dominated by TCP 100.0%"
+            ],
+            "score": 3,
+            "second": 85,
+            "summary": "Anomaly at 85s: Traffic dominated by TCP 100.0%",
+            "tags": [
+                "protocol-dominance"
+            ]
+        }
+    ]
+}
