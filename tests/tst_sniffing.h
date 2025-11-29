@@ -15,6 +15,11 @@ private slots:
     void parseHttpRequest();
     void parseDnsQuery();
     void parseTlsClientHello();
+    void parseIcmpv6();
+    void parseIgmp();
+    void parseSctp();
+    void parseUdplite();
+    void parseGre();
 };
 
 #endif // TST_SNIFFING_H

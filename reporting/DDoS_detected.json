@@ -1,0 +1,68 @@
+{
+    "createdAt": "2025-11-25T12:13:17",
+    "description": "Possible malicious activity",
+    "packets": [
+        {
+            "color": "#ffdc8add",
+            "destination": "10.10.10.10",
+            "info": "2224063072  1925559231  24  SYN|ACK  29200  37977  0",
+            "number": "7985",
+            "protocol": "TCP",
+            "row": 7984,
+            "source": "107.187.115.70",
+            "tags": [
+                "malware",
+                "tag1"
+            ],
+            "time": "-0.551"
+        },
+        {
+            "color": "#ffdc8add",
+            "destination": "10.10.10.10",
+            "info": "2352919530  2046097009  24  SYN|ACK  29200  26522  0",
+            "number": "7987",
+            "protocol": "TCP",
+            "row": 7986,
+            "source": "107.164.184.204",
+            "tags": [
+                "malware",
+                "tag2"
+            ],
+            "time": "-0.551"
+        },
+        {
+            "color": "#ffffbe6f",
+            "destination": "10.10.10.10",
+            "info": "4291902488  879711068  24  SYN|ACK  5840  4601  0",
+            "number": "7988",
+            "protocol": "TCP",
+            "row": 7987,
+            "source": "50.118.214.248",
+            "tags": [
+                "malware",
+                "tag3"
+            ],
+            "time": "-0.551"
+        },
+        {
+            "color": "#ff8ff0a4",
+            "destination": "10.10.10.10",
+            "info": "2332543986  288097671  24  SYN|ACK  65392  49004  0",
+            "number": "7989",
+            "protocol": "TCP",
+            "row": 7988,
+            "source": "23.27.115.130",
+            "tags": [
+                "malware",
+                "tag4"
+            ],
+            "time": "-0.551"
+        }
+    ],
+    "recommendedAction": "Block related traffic",
+    "tags": [
+        "malware"
+    ],
+    "threatLevel": "Critical",
+    "title": "DDoS detected"
+}

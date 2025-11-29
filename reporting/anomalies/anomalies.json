@@ -1,6 +1,25 @@
 {
     "anomalies": [
         {
+            "capturedAt": "2025-11-25T11:13:20Z",
+            "id": "17382219988950300113",
+            "reasons": [
+                "New protocol(s): ARP, ICMP, TCP, UDP",
+                "Traffic dominated by TCP 96.0%",
+                "High connection churn (7059 new/7059 total)",
+                "Potential DDoS against 10.10.10.10 (7055 sources, 7996 packets)"
+            ],
+            "score": 5.29875,
+            "second": 0,
+            "summary": "Anomaly at 0s: New protocol(s): ARP, ICMP, TCP, UDP; Traffic dominated by TCP 96.0%; High connection churn (7059 new/7059 total); Potential DDoS against 10.10.10.10 (7055 sources, 7996 packets)",
+            "tags": [
+                "new-protocol",
+                "protocol-dominance",
+                "connection-churn",
+                "ddos-target"
+            ]
+        },
+        {
             "capturedAt": "2025-11-25T11:04:55Z",
             "id": "5940836426511674415",
             "reasons": [

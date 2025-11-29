@@ -2,6 +2,7 @@
 #include "packets/sniffing.h"
 #include "packets/packethelpers.h"
 #include "tst_sniffing.h"
+#include <netinet/in.h>
 
 // PacketWorker normally relies on Qt's meta-object system for its signal
 // implementation. The unit tests only need Sniffing's parsing helpers, so we
@@ -152,6 +153,146 @@ static QByteArray arpPacket()
     QByteArray pkt;
     pkt.append(reinterpret_cast<const char*>(&eth), sizeof(eth));
     pkt.append(reinterpret_cast<const char*>(&arp), sizeof(arp));
+    return pkt;
+}
+
+static QByteArray icmpv6Packet()
+{
+    sniff_ethernet eth{};
+    memcpy(eth.ether_dhost, "\x00\x11\x22\x33\x44\x55", 6);
+    memcpy(eth.ether_shost, "\x66\x77\x88\x99\xaa\xbb", 6);
+    eth.ether_type = htons(ETHERTYPE_IPV6);
+
+    sniff_ipv6 ip6{};
+    ip6.ip6_flow = htonl(6 << 28);
+    ip6.ip6_plen = htons(sizeof(sniff_icmpv6));
+    ip6.ip6_nxt = IPPROTO_ICMPV6;
+    ip6.ip6_hlim = 255;
+    inet_pton(AF_INET6, "2001:db8::5", &ip6.ip6_src);
+    inet_pton(AF_INET6, "2001:db8::6", &ip6.ip6_dst);
+
+    sniff_icmpv6 icmp6{};
+    icmp6.icmp6_type = 128;
+    icmp6.icmp6_code = 0;
+    icmp6.icmp6_cksum = htons(0x1a2b);
+    icmp6.icmp6_data.echo.id = htons(0x1234);
+    icmp6.icmp6_data.echo.seq = htons(0x0001);
+
+    QByteArray pkt;
+    pkt.append(reinterpret_cast<const char*>(&eth), sizeof(eth));
+    pkt.append(reinterpret_cast<const char*>(&ip6), sizeof(ip6));
+    pkt.append(reinterpret_cast<const char*>(&icmp6), sizeof(icmp6));
+    return pkt;
+}
+
+static QByteArray igmpPacket()
+{
+    sniff_ethernet eth{};
+    memcpy(eth.ether_dhost, "\x01\x00\x5e\x00\x00\x01", 6);
+    memcpy(eth.ether_shost, "\x66\x77\x88\x99\xaa\xbb", 6);
+    eth.ether_type = htons(ETHERTYPE_IP);
+
+    sniff_ip ip{};
+    ip.ip_vhl = (4 << 4) | 5;
+    ip.ip_ttl = 1;
+    ip.ip_p = IPPROTO_IGMP;
+    ip.ip_src.s_addr = inet_addr("192.0.2.3");
+    ip.ip_dst.s_addr = inet_addr("224.0.0.1");
+
+    sniff_igmpv1v2 igmp{};
+    igmp.type = 0x16;
+    igmp.mrt = 10;
+    igmp.cksum = htons(0xbeef);
+    igmp.group_addr.s_addr = inet_addr("239.255.0.1");
+
+    ip.ip_len = htons(sizeof(sniff_ip) + sizeof(sniff_igmpv1v2));
+
+    QByteArray pkt;
+    pkt.append(reinterpret_cast<const char*>(&eth), sizeof(eth));
+    pkt.append(reinterpret_cast<const char*>(&ip), sizeof(ip));
+    pkt.append(reinterpret_cast<const char*>(&igmp), sizeof(igmp));
+    return pkt;
+}
+
+static QByteArray sctpPacket()
+{
+    sniff_ethernet eth{};
+    memcpy(eth.ether_dhost, "\x00\x11\x22\x33\x44\x55", 6);
+    memcpy(eth.ether_shost, "\x66\x77\x88\x99\xaa\xbb", 6);
+    eth.ether_type = htons(ETHERTYPE_IP);
+
+    sniff_ip ip{};
+    ip.ip_vhl = (4 << 4) | 5;
+    ip.ip_p = IPPROTO_SCTP;
+    ip.ip_src.s_addr = inet_addr("192.0.2.4");
+    ip.ip_dst.s_addr = inet_addr("192.0.2.5");
+
+    sniff_sctp sctp{};
+    sctp.src_port = htons(5000);
+    sctp.dst_port = htons(6000);
+    sctp.verification_tag = htonl(0x01020304);
+    sctp.checksum = htonl(0xAABBCCDD);
+
+    ip.ip_len = htons(sizeof(sniff_ip) + sizeof(sniff_sctp));
+
+    QByteArray pkt;
+    pkt.append(reinterpret_cast<const char*>(&eth), sizeof(eth));
+    pkt.append(reinterpret_cast<const char*>(&ip), sizeof(ip));
+    pkt.append(reinterpret_cast<const char*>(&sctp), sizeof(sctp));
+    return pkt;
+}
+
+static QByteArray udplitePacket()
+{
+    sniff_ethernet eth{};
+    memcpy(eth.ether_dhost, "\x00\x11\x22\x33\x44\x55", 6);
+    memcpy(eth.ether_shost, "\x66\x77\x88\x99\xaa\xbb", 6);
+    eth.ether_type = htons(ETHERTYPE_IP);
+
+    sniff_ip ip{};
+    ip.ip_vhl = (4 << 4) | 5;
+    ip.ip_p = IPPROTO_UDPLITE;
+    ip.ip_src.s_addr = inet_addr("192.0.2.7");
+    ip.ip_dst.s_addr = inet_addr("192.0.2.8");
+
+    sniff_udplite udplite{};
+    udplite.src_port = htons(15000);
+    udplite.dst_port = htons(16000);
+    udplite.checksum_cov = htons(12);
+    udplite.checksum = htons(0x1234);
+
+    ip.ip_len = htons(sizeof(sniff_ip) + sizeof(sniff_udplite));
+
+    QByteArray pkt;
+    pkt.append(reinterpret_cast<const char*>(&eth), sizeof(eth));
+    pkt.append(reinterpret_cast<const char*>(&ip), sizeof(ip));
+    pkt.append(reinterpret_cast<const char*>(&udplite), sizeof(udplite));
+    return pkt;
+}
+
+static QByteArray grePacket()
+{
+    sniff_ethernet eth{};
+    memcpy(eth.ether_dhost, "\x00\x11\x22\x33\x44\x55", 6);
+    memcpy(eth.ether_shost, "\x66\x77\x88\x99\xaa\xbb", 6);
+    eth.ether_type = htons(ETHERTYPE_IP);
+
+    sniff_ip ip{};
+    ip.ip_vhl = (4 << 4) | 5;
+    ip.ip_p = IPPROTO_GRE;
+    ip.ip_src.s_addr = inet_addr("203.0.113.1");
+    ip.ip_dst.s_addr = inet_addr("203.0.113.2");
+
+    sniff_gre gre{};
+    gre.flags_version = htons(0x2001);
+    gre.protocol = htons(ETHERTYPE_IP);
+
+    ip.ip_len = htons(sizeof(sniff_ip) + sizeof(sniff_gre));
+
+    QByteArray pkt;
+    pkt.append(reinterpret_cast<const char*>(&eth), sizeof(eth));
+    pkt.append(reinterpret_cast<const char*>(&ip), sizeof(ip));
+    pkt.append(reinterpret_cast<const char*>(&gre), sizeof(gre));
     return pkt;
 }
 
@@ -411,4 +552,61 @@ void SniffingTest::parseTlsClientHello()
     QVERIFY(tls.isClientHello);
     QCOMPARE(tls.serverName, QStringLiteral("example.com"));
     QVERIFY(tls.cipherSuites.contains(QStringLiteral("TLS_AES_128_GCM_SHA256")));
+}
+
+void SniffingTest::parseIcmpv6()
+{
+    Sniffing s;
+    auto pkt = icmpv6Packet();
+    auto vals = s.parseIcmpv6(reinterpret_cast<const u_char*>(pkt.constData()), DLT_EN10MB);
+    QCOMPARE(vals.at(0), QStringLiteral("128"));
+    QCOMPARE(vals.at(1), QStringLiteral("0"));
+    QCOMPARE(vals.at(2), QStringLiteral("0X1A2B"));
+    QCOMPARE(vals.at(3), QStringLiteral("4660"));
+    QCOMPARE(vals.at(4), QStringLiteral("1"));
+    QCOMPARE(vals.at(5), QStringLiteral("Echo Request"));
+}
+
+void SniffingTest::parseIgmp()
+{
+    Sniffing s;
+    auto pkt = igmpPacket();
+    auto vals = s.parseIgmp(reinterpret_cast<const u_char*>(pkt.constData()), DLT_EN10MB);
+    QCOMPARE(vals.at(0), QStringLiteral("22"));
+    QCOMPARE(vals.at(1), QStringLiteral("Membership Report v2"));
+    QCOMPARE(vals.at(2), QStringLiteral("10"));
+    QCOMPARE(vals.at(3), QStringLiteral("0XBEEF"));
+    QCOMPARE(vals.at(4), QStringLiteral("239.255.0.1"));
+}
+
+void SniffingTest::parseSctp()
+{
+    Sniffing s;
+    auto pkt = sctpPacket();
+    auto vals = s.parseSctp(reinterpret_cast<const u_char*>(pkt.constData()), DLT_EN10MB);
+    QCOMPARE(vals.at(0), QStringLiteral("5000"));
+    QCOMPARE(vals.at(1), QStringLiteral("6000"));
+    QCOMPARE(vals.at(2), QStringLiteral("0X01020304"));
+    QCOMPARE(vals.at(3), QStringLiteral("0XAABBCCDD"));
+}
+
+void SniffingTest::parseUdplite()
+{
+    Sniffing s;
+    auto pkt = udplitePacket();
+    auto vals = s.parseUdplite(reinterpret_cast<const u_char*>(pkt.constData()), DLT_EN10MB);
+    QCOMPARE(vals.at(0), QStringLiteral("15000"));
+    QCOMPARE(vals.at(1), QStringLiteral("16000"));
+    QCOMPARE(vals.at(2), QStringLiteral("12"));
+    QCOMPARE(vals.at(3), QStringLiteral("0X1234"));
+}
+
+void SniffingTest::parseGre()
+{
+    Sniffing s;
+    auto pkt = grePacket();
+    auto vals = s.parseGre(reinterpret_cast<const u_char*>(pkt.constData()), DLT_EN10MB);
+    QCOMPARE(vals.at(0), QStringLiteral("0X2001"));
+    QCOMPARE(vals.at(1), QStringLiteral("1"));
+    QCOMPARE(vals.at(2), QStringLiteral("0X0800"));
 }
